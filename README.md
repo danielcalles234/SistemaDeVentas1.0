@@ -1,0 +1,1 @@
+"Este sistema de ventas cumple las funciojnes de poder sobrellevar la administracion de una pequenia o mediana empresa brindando diferentes funciones q ayudan a sobrellevar la administracion de esta misma"  
