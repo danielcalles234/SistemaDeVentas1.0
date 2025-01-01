@@ -130,8 +130,8 @@ public class UsuariosControllers implements ActionListener, MouseListener, KeyLi
         ob[0] = lista.get(i).getId();
         ob[1] = lista.get(i).getUsuario();
         ob[2] = lista.get(i).getNombre();
-        ob[3] = lista.get(i).getCaja();
-        ob[4] = lista.get(i).getRol();
+        ob[4] = lista.get(i).getCaja();
+        ob[3] = lista.get(i).getRol();
         ob[5] = lista.get(i).getEstado();
         modelo.addRow(ob);
     }
@@ -157,9 +157,9 @@ public class UsuariosControllers implements ActionListener, MouseListener, KeyLi
             views.txtIdUser.setText(views.TableUsers.getValueAt(fila, 0).toString());
             views.txtUsuarioUser.setText(views.TableUsers.getValueAt(fila, 1).toString());
             views.txtNombreUser.setText(views.TableUsers.getValueAt(fila, 2).toString());
-            views.cbxCajaUser.setSelectedItem(views.TableUsers.getValueAt(fila, 3).toString());
-            views.cbxRolUser.setSelectedItem(views.TableUsers.getValueAt(fila, 4).toString());
-            views.txtClaveUser.setEditable(false);
+            views.cbxCajaUser.setSelectedItem(views.TableUsers.getValueAt(fila, 4).toString());
+            views.cbxRolUser.setSelectedItem(views.TableUsers.getValueAt(fila, 3).toString());
+            views.txtClaveUser.setEditable(true);
             views.btnRegistrarUser.setEnabled(false);
         }else if (e.getSource() == views.jLabelUsers) {
     views.jTabbedPane1.setSelectedIndex(1);

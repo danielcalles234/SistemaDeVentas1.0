@@ -1,6 +1,8 @@
 
 package Controllers;
 
+import Modelo.Configuracion;
+import Modelo.UsuarioDao;
 import Views.PanelAdmin;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -9,10 +11,14 @@ import java.awt.event.MouseListener;
 
 public class ConfigControllers implements MouseListener{
     
+    private Configuracion cof;
+    private UsuarioDao Cdao;
     private PanelAdmin views;
 
-    public ConfigControllers(PanelAdmin views) {
-            this.views = views;
+    public ConfigControllers(Configuracion cof, UsuarioDao Cdao, PanelAdmin views) {
+    this.cof = cof ;
+    this.Cdao = Cdao;
+    this.views = views;
     this.views.jLabelCat.addMouseListener(this);
     this.views.jLabelClientes.addMouseListener(this);
     this.views.jLabelConfig.addMouseListener(this);
@@ -22,6 +28,15 @@ public class ConfigControllers implements MouseListener{
     this.views.jLabelProveedor.addMouseListener(this);
     this.views.jLabelUsers.addMouseListener(this);
     this.views.jLabelProductos.addMouseListener(this);
+    cof = Cdao.getConfig();
+    views.txtIdEmpresa.setText(""+cof.getId());
+    views.txtRucEmpresa.setText(cof.getRuc());
+    views.txtTelefonoEmpresa.setText(cof.getTelefono());
+    views.txtNombreEmpresa.setText(cof.getNombre());
+    views.txtDireccionEmpresa.setText(cof.getDireccion());
+    views.txtMensaje.setText(cof.getMensaje());
+
+  
     }
     
 

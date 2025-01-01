@@ -7,13 +7,12 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Conexion {
-    Connection con;
 
-    public Connection getConexion(){
+
+     public static Connection getConexion(){
         try {
             String db = "jdbc:mysql://localhost:3306/puntodeventa";
-            con = DriverManager.getConnection(db, "root", "");
-            return con;
+            return  DriverManager.getConnection(db, "root", "");
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.toString());
         }

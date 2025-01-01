@@ -120,6 +120,28 @@ listaUsers.add(us);
         return false;
     }
 }
+    
+    public Configuracion getConfig(){ 
+        String sql = "SELECT * FROM configuracion";
+        Configuracion cof = new Configuracion();
+        try {
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+               cof.setId(rs.getInt("id"));
+               cof.setRuc(rs.getString("ruc"));
+               cof.setNombre(rs.getString("nombre"));
+               cof.setTelefono(rs.getString("telefono"));
+               cof.setDireccion(rs.getString("direccion"));
+               cof.setMensaje(rs.getString("mensaje"));
+}
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.toString());
+        }
+        return cof;
+    }
 
     
 }
